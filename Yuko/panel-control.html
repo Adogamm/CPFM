@@ -1,0 +1,75 @@
+<!-- TODO estilos -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/theme.css" type="text/css">
+    <title>Cosechando por tu futuro</title>
+    <link rel="icon" href="images/icons/024-plant.png">
+</head>
+    
+    
+
+
+
+<body style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(images/main_img/bonsai.jpg);	background-position: center center, center center;	background-size: cover, cover;	background-repeat: repeat, repeat;">
+
+<!-- Barra de navegación -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container" >
+            <div class="navbar-brand">
+                <img src="images/icons/024-plant.png" width="30" height="30">
+                <a class="text-ceter" href="index.html"><b style="color: white;">Cosechando por tu futuro</b></a>
+            </div> 
+            <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar18">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar18"> <a class="navbar-brand d-none d-md-block" href="index.html">
+                <ul class="navbar-nav mx-auto">
+                <li class="nav-item"> <a class="nav-link" href="index.html">Inicio</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<br><br>
+
+
+
+ <!-- formulario -->
+<div class="container">
+    <div class="row">
+        <div class="mx-auto col-lg-6 col-10" style="background-image: linear-gradient(rgba(240, 240, 240, 0.2), rgba(240, 240, 240, 0.8)); background-position: left top; background-size: 100%; background-repeat: no-repeat; border-radius: 25px; background-attachment: fixed;">
+            <h1 style="color: white;">Nuevo registro</h1>
+            <form class="text-left" action="php/panel-control.php" method="POST">
+            <div class="form-group">
+            <div class="form-group">
+            <div class="form-group">
+            <input type="text" class="form-control" id="form16" placeholder="Nombre" name="Nombre" required="">
+        </div>
+        </div>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="form17" placeholder="Tamaño" name="Tamaño" required="">
+        </div>
+        <div class="form-group">
+            <input type="texto" class="form-control" id="form18" placeholder="Tipo" name="Tipo" required="">
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" id="form18" placeholder="Descripcion" name="Descripcion" required=""></textarea>
+        </div>
+        <div class="form-group">
+            <!-- #TODO Realizar consulta a la BDD-->
+                <input type="button" value="Consulta" class="btn btn-primary" style="width: 200px; height: 40px; margin-left: 35px;">
+                <input type="submit" value="Guardar" class="btn btn-primary" style="width: 200px; height: 40px; margin-left: 70px;">
+        </div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+</html>

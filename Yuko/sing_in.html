@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="css/theme.css">
+  <title>Crear cuenta</title>
+  <link rel="icon" href="images/icons/024-plant.png">
+</head>
+
+<body style="	background-image: url(images/main_img/bonsai.jpg);	background-position: top left;	background-size: 100%;	background-repeat: no-xrepeat; object-fit: cover;">
+
+  <!-- Barra de navegacion -->
+  <nav class="navbar navbar-dark bg-dark">
+      <div class="container" >
+        <div class="navbar-brand">
+          <img src="images/icons/024-plant.png" width="30" height="30">
+          <a class="text-ceter" href="index.html"><b style="color: white;">Cosechando por tu futuro</b></a>
+         </div> 
+        <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar18">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar18">
+          <a class="navbar-brand d-none d-md-block" href="index.html"></a>
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"> <a class="nav-link" href="index.html">Inicio</a> </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<br><br>
+
+<!-- formulario -->
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto col-lg-6 col-10" style="background-image: linear-gradient(rgba(240, 240, 240, 0.2), rgba(240, 240, 240, 0.8)); background-position: left top; background-size: 100%; background-repeat: no-repeat; border-radius: 25px; background-attachment: fixed;">
+          <h1 contenteditable="true">Crear cuenta nueva</h1>
+          <form class="text-left" action="php/hoja.php" method="POST">
+            <div class="form-group">
+              <div class="form-group">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="form16" placeholder="Nombre" name="Nombre" required=""><br>
+                  <input type="text" class="form-control" id="form16" placeholder="Apellidos" name="Apellidos" required="">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" id="form17" placeholder="Correo" name="Correo" required="">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" id="form18" placeholder="Verificar correo" name="Vericor" required="">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="form19">Contraseña</label>
+                <input type="password" class="form-control" id="form19" name="Password" required="">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="form20">Confirmar contraseña</label>
+                <input type="password" class="form-control" id="form20" name="Password" required="">
+              </div>
+              
+              <!-- verificacion -->
+              <script>
+                var p1 = document.getElementById('form19');
+                var p2 = document.getElementById('form20');
+                var c1 = document.getElementById('form17');
+                var c2 = document.getElementById('form18');
+               
+                function validacion(){
+                  if(p1.value != p2.value){
+                    alert("Las contraseñas no coinciden");
+                    p1.value=''
+                    p2.value=''
+                    p1.value.focus();
+                  }
+                  if(c1.value != c2.value){
+                    alert('Los correos electronicos no coinciden');
+                    c1.value=''
+                    c2.value=''
+                    c1.value.focus();
+                  }
+                }
+              
+              </script>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6"> <label for="form19">Fecha de nacimiento</label><br><br>
+                <input class="form-control" type="date" name="Fecha" style="position: absolute; top: 45%;" required="">
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="form21" value="on" required=""> <label class="form-check-label" for="form21"> Estoy de acuerdo con <a href="#" style="color: blue;">los Terminos y Condiciones</a> de cosechando por tu futuro</label>
+              </div><br>
+              <input type="submit" value="Enviar" class="btn btn-primary" onclick="validacion()" style="width: 200px; height: 40px; right: 300px; position: absolute; top: 84.5%; left: 55%;">
+            </div>
+          </form>
+        </div>
+        <div class="form-group">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.js"></script>
+</body>
+
+</html>

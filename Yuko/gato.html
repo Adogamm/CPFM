@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        
+     
+        <meta charset="UTF-8">
+        <title> gato</title>
+
+<div class="caja">
+    
+        <script type="text/javascript">
+            // nombre de los jugadores
+            function comenzar(){
+                bandera = true;
+                var jugador1 = document.getElementById("jugador1");
+                var jugador2 = document.getElementById("jugador2");
+                if(jugador1.value==""){
+                    alert("Jugador 1 ingresa tu nombre");
+                    jugador1.focus();
+                }else{
+                    if(jugador2.value==""){
+                        alert("Jugador 2 ingresa tu nombre");
+                        jugador2.focus();
+                        //Arreglo hecho con botones
+                    }else{
+                        tab[0] = document.getElementById("B0");
+                        tab[1] = document.getElementById("B1");
+                        tab[2] = document.getElementById("B2");
+                        tab[3] = document.getElementById("B3");
+                        tab[4] = document.getElementById("B4");
+                        tab[5] = document.getElementById("B5");
+                        tab[6] = document.getElementById("B6");
+                        tab[7] = document.getElementById("B7");
+                        tab[8] = document.getElementById("B8");
+                        for(var i=0;i<9;i++){
+                            tab[i].className = "botonInicial";
+                            tab[i].value = "R";
+                        }
+                        turno = 1;
+                        document.getElementById("TurnoJugador").innerHTML = "Turno del jugador  " + jugador1.value;
+                    }
+                }
+            }
+
+            var bandera = false;
+            var turno = 0;
+            var tab = new Array();
+            //Iniciar el juego
+            window.onload = function(){
+                var iniciar = document.getElementById("Inicio");
+                iniciar.addEventListener("click",comenzar);
+            }
+
+            
+           //CAMBIO DE JUGADORES 
+            function colocar(boton){
+                if(bandera==true){
+                    if(turno==1 && boton.value=="R"){
+                        document.getElementById("TurnoJugador").innerHTML = "Turno del jugador  " + jugador2.value;
+                        boton.value = "X";
+                        boton.className = "botonJugador1";
+                        turno = 2;
+                    }else{
+                        if(turno==2 && boton.value=="R"){
+                            document.getElementById("TurnoJugador").innerHTML = "Turno del jugador  " + jugador1.value;
+                            boton.value = "O";
+                            boton.className = "botonJugador2";
+                            turno = 1;
+                        }
+                    }
+                }
+                ganador();
+            }
+
+            //Determinar quien gana
+            function ganador(){
+                if((tab[0].value=="X" && tab[1].value=="X" && tab[2].value=="X")
+                || (tab[3].value=="X" && tab[4].value=="X" && tab[5].value=="X")
+                || (tab[6].value=="X" && tab[7].value=="X" && tab[8].value=="X")
+                || (tab[0].value=="X" && tab[3].value=="X" && tab[6].value=="X")
+                || (tab[1].value=="X" && tab[4].value=="X" && tab[7].value=="X")
+                || (tab[2].value=="X" && tab[5].value=="X" && tab[8].value=="X")
+                || (tab[0].value=="X" && tab[4].value=="X" && tab[8].value=="X")
+                || (tab[2].value=="X" && tab[4].value=="X" && tab[6].value=="X")
+                ){
+                    alert("Jugador "+ jugador1.value + " Gana!");
+                    bandera = false;
+                }
+                if((tab[0].value=="O" && tab[1].value=="O" && tab[2].value=="O")
+                || (tab[3].value=="O" && tab[4].value=="O" && tab[5].value=="O")
+                || (tab[6].value=="O" && tab[7].value=="O" && tab[8].value=="O")
+                || (tab[0].value=="O" && tab[3].value=="O" && tab[6].value=="O")
+                || (tab[1].value=="O" && tab[4].value=="O" && tab[7].value=="O")
+                || (tab[2].value=="O" && tab[5].value=="O" && tab[8].value=="O")
+                || (tab[0].value=="O" && tab[4].value=="O" && tab[8].value=="O")
+                || (tab[2].value=="O" && tab[4].value=="O" && tab[6].value=="O")
+                ){
+                    alert("Jugador "+ jugador2.value + " Gana!");
+                    bandera = false;
+                }
+                if((tab[0].value!="R" && tab[1].value!="R" && tab[2].value!="R")
+                && (tab[3].value!="R" && tab[4].value!="R" && tab[5].value!="R")
+                && (tab[6].value!="R" && tab[7].value!="R" && tab[8].value!="R")
+                ){
+                    alert("empate");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+        <!--Partes del HTML-->
+            <section id="principal">
+            <article id="comandos">
+                <p>Jugador 1: </p>
+                <input type="text" id="jugador1"><br>
+                <p>Jugador 2: </p>
+                <input type="text" id="jugador2"><br>
+                <input type="button" id="Inicio" value="¡Comenzar!"><br>
+                <label id="TurnoJugador"></label>
+            </article>
+            <article id="tablero">
+                <input type="button" id="B0" onclick="colocar(this)">
+                <input type="button" id="B1" onclick="colocar(this)">
+                <input type="button" id="B2" onclick="colocar(this)"><br>
+
+                <input type="button" id="B3" onclick="colocar(this)">
+                <input type="button" id="B4" onclick="colocar(this)">
+                <input type="button" id="B5" onclick="colocar(this)"><br>
+
+                <input type="button" id="B6" onclick="colocar(this)">
+                <input type="button" id="B7" onclick="colocar(this)">
+                <input type="button" id="B8" onclick="colocar(this)"><br>
+                
+            </article>
+                
+        </section>
+        </div>
+    </body>
+        
+        
+        
+            
+            <!--CSS-->
+        <style type="text/css">
+            .caja{
+            background-color: chartreuse;
+            width: 500px;
+            margin-top: 15px;
+            border: 14px;
+            padding: 6px;
+                
+                
+    
+ 
+                
+            }
+            article#comandos{
+                display: inline-block
+                min-height 300px;
+                padding: 20px;
+                vertical-align: 500px; 
+                width: 20%;
+            }
+            article#tablero{
+            
+                display: inline-block;
+                margin: 0 auto;
+                text-align: CENTER;
+                vertical-align: 100x;
+                width: 50%;
+            }
+            article#tablero input{
+                font-size: 3em;
+                height: 50px;
+                margin: 10px;
+                width: 50px;
+            }
+            input[type="button"]#Inicio{
+                font-size: 0.8em;
+                margin-top: 2em;
+                padding: 0.7em;
+            }
+            input[type="text"]{
+                font-size: 1em;
+                margin: 0.2em;
+                padding: 0.1em;
+            }
+            
+            label{
+                font-size: 1em;
+                font-weight: bold;
+                text-align: center;
+            }
+            .botonInicial{
+                color: darkgoldenrod;
+                background-color: darkgoldenrod;
+            }
+            .botonJugador1{
+                color: white;
+                background-color: darkturquoise;
+            }
+            .botonJugador2{
+                color: white;
+                background-color: darkcyan;
+            }
+           
+        </style>
+       
